@@ -17,8 +17,16 @@ public abstract class Player {
 
     public abstract void takeTurn();
 
+    protected void reset() {
+        score = 0;
+    }
+
     public boolean hasWon() {
         return score >= 100;
+    }
+
+    public void endTurn() {
+        System.out.println(name + " has " + score + " points\n");
     }
 
     public String getName() {
@@ -28,8 +36,6 @@ public abstract class Player {
     public byte getScore() {
         return score;
     }
-
-    public abstract String getID();
 
     public void updateScore(byte score_) {
         score += score_;
